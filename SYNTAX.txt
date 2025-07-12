@@ -52,7 +52,7 @@ else -> works with if (if (...) {} else {} )
 
 run -> runs a pre-defined function (E.g. run coolDown() )
 
-wait -> adds a delay (E.g. if (...) delay(1000)  //1 second )
+wait -> adds a delay (E.g. if (...) wait(1000)  //1 second )
 
 // how to call to values 
     // when calling a value E.g. you wanted to call to x which equals 5 youd add :x:
