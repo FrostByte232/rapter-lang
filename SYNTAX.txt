@@ -1,0 +1,102 @@
+// Rapter Language Syntax Reference
+
+    <---------Notes--------->
+
+// I want Rapter to be able to control whatever its coded for (Primarily machines), Everything is a object unless specifically coded else wise.
+
+// How the code in rapter is written should make sense and follow a set grammar structure (need to work on that)
+
+# Rapter is a themed language built around machine control and expressive command syntax.
+# Some keywords (like 'lett', 'run', 'iff') are stylistic choices meant to reinforce the vibe of issuing instructions to hardware.
+# These may be simplified or made optional later depending on clarity, parser complexity, and user feedback.
+
+# 'run' is used to call functions as a command (e.g. run cooldown()), but may be optional in the future.
+# Direct function calls like cooldown() are cleaner and more conventional, and may become the default.
+
+# Overall goal: balance expressive style with clean grammar and logical structure.
+# Grammar rules are still being shaped—syntax may evolve as the language matures.
+
+    <---------Syntax--------->
+    
+# -> comments
+
+; -> ends a line (E.g. roar("Hello, World!"); )
+
+    // a lot of things will be named the way they were because there named how id remember them
+class -> declare class (E.g. class Drone {...} )
+
+obj -> declares an object (E.g. obj Drone.name = "Scout")
+   
+use -> imports/modules (E.g. use droneflight.rapt)
+    
+hunt -> declare Function (E.g. hunt getTemp() )
+
+yield -> returning values (E.g. 
+				hunt getTemp() {
+				  prop t = 100
+				  yield t  # returns t
+				} )
+    
+
+prop -> used to declare a variables (E.g. prop x = 10 )
+
+const -> constants (E.g. const MAX_TEMP = 120 )
+
+roar -> Print to console (E.g. roar("*s", X) )
+
+obey -> looks for user input (E.g. obey ("") )
+
+if -> conditional (E.g. if temp > 60 {...} )
+
+else -> works with if (if (...) {} else {} )
+
+run -> runs a pre-defined function (E.g. run coolDown() )
+
+wait -> adds a delay (E.g. if (...) delay(1000)  //1 second )
+
+// how to call to values 
+    // when calling a value E.g. you wanted to call to x which equals 5 youd add :x:
+	:: -> wraps around a value inside roar("") to call to said variable/character/etc   (E.g. roar("string is :string:") )
+// end of explination
+    
+	// math operations
+    
+   	 	'+' addition
+    
+ 	  	'-' subtraction
+    
+  	  	'*' multiply
+    
+  	  	'/' divide
+    
+	// end of operations
+    
+    
+// flow keywords
+
+	halt -> stops execution immediately (E.g. if temp > 130 halt )
+	
+	when -> event binding (E.g. when temp > 100 run coolDown() )
+	
+
+
+// loops keywords
+
+	chase -> while loop "new name to fit vibe" (E.g. chase (x > 5) {...} )
+	
+	For -> loops a specific block for x amount of times (E.g. for runTime() {}  // runtime in this case would be the number of second the drone runs for)
+	
+	do -> loops a statement or group of statements between do and end repetitivly based on the value of an index variable
+	
+	done -> halt but for loops 
+
+	E.g.   balance = 10000 ;
+		do payment_number = 1 to 10;
+		balance = BALANCE - 1000;
+		done;
+
+// end of loops
+
+
+
+
